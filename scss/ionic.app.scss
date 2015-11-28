@@ -15,11 +15,23 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
-// The path for our ionicons font files, relative to the built CSS in www/css
+$light: #6e2f3b;
+$stable: #605542;
+$balanced:#605542;
+$positive:#6e2f3b;
+$calm:#6e2f3b;
+$button-stable-text: #fdd978;
+$button-light-text: #fdd978;
+$base-background-color: #605542;
+$base-color: #fdd978;
+$item-divider-bg:                 #6e2f3b;
+$item-divider-color:              #80acaa;
+$item-divider-color:              #fdd978;
+
+  // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "../www/lib/ionic/scss/ionic";
 @import "chat";
 @import "maps";
-
