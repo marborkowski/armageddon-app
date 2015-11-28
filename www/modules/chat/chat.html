@@ -7,6 +7,19 @@
             </ion-item>
         </ion-list>
 
+        <div class="list">
+
+            <div class="item item-input-inset">
+                <label class="item-input-wrapper">
+                    <input type="text" placeholder="Message" ng-model="data.message">
+                </label>
+                <button class="button button-small" ng-click="sendMessage()">
+                    Send
+                </button>
+            </div>
+
+        </div>
+
         <div class="button-bar">
             <button class="button button-balanced" ng-click="showMessagePopup()">
                 Send message

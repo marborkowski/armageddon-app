@@ -58,7 +58,15 @@
                     'message': 'Message 4'
                 }
             ];
-
+            
+            
+            $scope.sendMessage = function () {
+                $scope.chatMessages.push({
+                    'nick': 'Marcin',
+                    'message': $scope.data.message
+                })
+            };
+            
             $scope.showMessagePopup = function () {
 
                 if (!$scope.data.nick) {
@@ -71,7 +79,7 @@
                 }
 
                 var myPopup = $ionicPopup.show({
-                    template: '<input ng-model="data.wifi">',
+                    template: '<input ng-model="data.message">',
                     title: 'Message',
                     subTitle: "Send message as: " + $scope.data.nick,
                     scope: $scope,
@@ -81,10 +89,10 @@
                             text: '<b>Send</b>',
                             type: 'button-positive',
                             onTap: function (e) {
-                                if (!$scope.data.wifi) {
+                                if (!$scope.data.message) {
                                     e.preventDefault();
                                 } else {
-                                    return $scope.data.wifi;
+                                    return $scope.data.message;
                                 }
                             }
                         },
@@ -92,7 +100,10 @@
                 });
 
                 myPopup.then(function (res) {
-                    console.log('Tapped!', res);
+                    console.log('Tapped!', {
+                        nick: $scope.data.nick,
+                        message: res
+                    });
                 });
             }
 
@@ -104,7 +115,7 @@
                     buttons: [
                         { text: 'Cancel' },
                         {
-                            text: '<b>Send</b>',
+                            text: '<b>Set</b>',
                             type: 'button-positive',
                             onTap: function (e) {
                                 if (!$scope.data.nick) {
