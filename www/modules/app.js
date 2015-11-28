@@ -44,12 +44,12 @@ angular.module('starter', ['ionic'])
             })
 
             .state('app.settings', {
-                url: '/set',
+                url: '/disc',
                 views: {
                     'menuContent': {
-                        templateUrl: 'modules/settings/settings.html',
-                        controller: 'SettingsController',
-                        controllerAs: 'settings'
+                        templateUrl: 'modules/bluetooth/discoverer.html',
+                        controller: 'DiscovererController',
+                        controllerAs: 'discoverer'
                     }
                 }
             });
