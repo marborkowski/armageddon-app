@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular.module('starter')
-        .controller('MapController', ['$scope', function($scope) {
+        .controller('MapController', ['$scope', 'MapData', function($scope, MapData) {
             var vm = this;
 
             vm.leaflet = {
@@ -9,6 +9,8 @@
                     autoDiscover: true
                 }
             };
+
+            MapData.saveMarker();
 
         }]);
 })();
