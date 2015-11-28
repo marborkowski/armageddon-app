@@ -16,7 +16,9 @@ angular.module('starter')
         var getMarkers = function() {
             var deferred = $q.defer();
 
-            deferred.resolve(($localStorage.getObject('markers') || []).map(function(marker) {
+            var markers = $localStorage.getObject('markers') || [];
+
+            deferred.resolve(markers.map(function(marker) {
                 marker.message = marker.type;
                 return marker;
             }));
