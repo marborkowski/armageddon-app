@@ -43,6 +43,17 @@ angular.module('starter', ['ionic', 'ionic.utils', 'leaflet-directive'])
                 }
             })
 
+            .state('app.epic', {
+                url: '/epic',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'modules/epicmovies/epicmovies.html',
+                        controller: 'EpicMoviesController',
+                        controllerAs: 'epic'
+                    }
+                }
+            })
+
             .state('app.welcome', {
                 url: '/wel',
                 views: {
