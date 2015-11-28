@@ -126,7 +126,7 @@ angular.module('starter', ['ionic', 'ionic.utils', 'leaflet-directive'])
                         }
                     });*/
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/app/wel');
+        $urlRouterProvider.otherwise('/app/chat');
     })
 
     .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {

@@ -2,63 +2,37 @@
     'use strict';
     angular.module('starter')
         .controller('ChatController', function ($scope, $ionicPopup) {
-            $scope.data = {}
+            $scope.data = {nick: 'Me'};
 
             $scope.chatMessages = [
                 {
-                    'nick': 'Stefcio',
-                    'message': 'Message 1'
+                    'nick': 'John',
+                    'message': 'Need antybiotics!'
                 },
                 {
-                    'nick': 'Ancia',
-                    'message': 'Message 2'
+                    'nick': 'Allen',
+                    'message': 'I have one package for you.'
                 },
                 {
-                    'nick': 'Stefcio',
-                    'message': 'Message 3'
+                    'nick': 'Jim',
+                    'message': 'Guys we have visitors from the North. Post office. Need backup'
                 },
                 {
-                    'nick': 'Ancia',
-                    'message': 'Message 4'
-                },
-                {
-                    'nick': 'Ancia',
-                    'message': 'Message 2'
-                },
-                {
-                    'nick': 'Stefcio',
-                    'message': 'Message 3'
-                },
-                {
-                    'nick': 'Ancia',
-                    'message': 'Message 4'
-                },
-                {
-                    'nick': 'Ancia',
-                    'message': 'Message 2'
-                },
-                {
-                    'nick': 'Stefcio',
-                    'message': 'Message 3'
-                },
-                {
-                    'nick': 'Ancia',
-                    'message': 'Message 4'
-                },
-                {
-                    'nick': 'Ancia',
-                    'message': 'Message 2'
-                },
-                {
-                    'nick': 'Stefcio',
-                    'message': 'Message 3'
-                },
-                {
-                    'nick': 'Ancia',
-                    'message': 'Message 4'
+                    'nick': 'John',
+                    'message': 'My arm is bleeding, can somebody help me please?!'
                 }
             ];
+            
+            
+            $scope.sendMessage = function () {
+                $scope.chatMessages.push({
+                    'nick': 'Me',
+                    'message': $scope.data.message
+                })
 
+                $scope.data.message = '';
+            };
+            
             $scope.showMessagePopup = function () {
 
                 if (!$scope.data.nick) {
@@ -71,7 +45,7 @@
                 }
 
                 var myPopup = $ionicPopup.show({
-                    template: '<input ng-model="data.wifi">',
+                    template: '<input ng-model="data.message">',
                     title: 'Message',
                     subTitle: "Send message as: " + $scope.data.nick,
                     scope: $scope,
@@ -81,10 +55,10 @@
                             text: '<b>Send</b>',
                             type: 'button-positive',
                             onTap: function (e) {
-                                if (!$scope.data.wifi) {
+                                if (!$scope.data.message) {
                                     e.preventDefault();
                                 } else {
-                                    return $scope.data.wifi;
+                                    return $scope.data.message;
                                 }
                             }
                         },
@@ -92,19 +66,22 @@
                 });
 
                 myPopup.then(function (res) {
-                    console.log('Tapped!', res);
+                    console.log('Tapped!', {
+                        nick: $scope.data.nick,
+                        message: res
+                    });
                 });
             }
 
             $scope.showNickPopup = function () {
                 var myPopup = $ionicPopup.show({
                     template: '<input ng-model="data.nick">',
-                    title: 'Your nick',
+                    title: 'Me',
                     scope: $scope,
                     buttons: [
                         { text: 'Cancel' },
                         {
-                            text: '<b>Send</b>',
+                            text: '<b>Set</b>',
                             type: 'button-positive',
                             onTap: function (e) {
                                 if (!$scope.data.nick) {
@@ -113,7 +90,7 @@
                                     return $scope.data.nick;
                                 }
                             }
-                        },
+                        }
                     ]
                 });
 

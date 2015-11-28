@@ -1,0 +1,27 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Add new location</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="addMarkerModal.close()">Cancel</button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">Type</span>
+                <select ng-model="addMarkerModal.type">
+                    <option ng-repeat="type in addMarkerModal.types">{{type}}</option>
+                </select>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Time span</span>
+                <select ng-model="addMarkerModal.constancy">
+                    <option ng-repeat="timeSpan in addMarkerModal.timeSpans">{{timeSpan}}</option>
+                </select>
+            </label>
+            <label class="item">
+                <button ng-click="addMarkerModal.save()" class="button button-block button-positive" type="submit">Save</button>
+            </label>
+        </div>
+    </ion-content>
+</ion-modal-view>
