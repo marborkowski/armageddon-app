@@ -9,6 +9,9 @@
                 },
                 setSelectedDevice: function(device) {
                     bluetooth._selectedDevice = device || null;
+                },
+                isActive: function() {
+                    return bluetooth._selectedDevice !== null;
                 }
             };
 

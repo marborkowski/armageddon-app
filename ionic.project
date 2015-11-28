@@ -1,6 +1,6 @@
 {
   "name": "armageddon-app",
-  "app_id": "",
+  "app_id": "5a173ae3",
   "gulpStartupTasks": [
     "sass",
     "watch"

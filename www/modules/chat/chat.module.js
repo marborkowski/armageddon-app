@@ -2,69 +2,35 @@
     'use strict';
     angular.module('starter')
         .controller('ChatController', function ($scope, $ionicPopup) {
-            $scope.data = {}
+            $scope.data = {nick: 'Me'};
 
             $scope.chatMessages = [
                 {
-                    'nick': 'Stefcio',
-                    'message': 'Message 1'
+                    'nick': 'John',
+                    'message': 'Need antybiotics!'
                 },
                 {
-                    'nick': 'Ancia',
-                    'message': 'Message 2'
+                    'nick': 'Allen',
+                    'message': 'I have one package for you.'
                 },
                 {
-                    'nick': 'Stefcio',
-                    'message': 'Message 3'
+                    'nick': 'Jim',
+                    'message': 'Guys we have visitors from the North. Post office. Need backup'
                 },
                 {
-                    'nick': 'Ancia',
-                    'message': 'Message 4'
-                },
-                {
-                    'nick': 'Ancia',
-                    'message': 'Message 2'
-                },
-                {
-                    'nick': 'Stefcio',
-                    'message': 'Message 3'
-                },
-                {
-                    'nick': 'Ancia',
-                    'message': 'Message 4'
-                },
-                {
-                    'nick': 'Ancia',
-                    'message': 'Message 2'
-                },
-                {
-                    'nick': 'Stefcio',
-                    'message': 'Message 3'
-                },
-                {
-                    'nick': 'Ancia',
-                    'message': 'Message 4'
-                },
-                {
-                    'nick': 'Ancia',
-                    'message': 'Message 2'
-                },
-                {
-                    'nick': 'Stefcio',
-                    'message': 'Message 3'
-                },
-                {
-                    'nick': 'Ancia',
-                    'message': 'Message 4'
+                    'nick': 'John',
+                    'message': 'My arm is bleeding, can somebody help me please?!'
                 }
             ];
             
             
             $scope.sendMessage = function () {
                 $scope.chatMessages.push({
-                    'nick': 'Marcin',
+                    'nick': 'Me',
                     'message': $scope.data.message
                 })
+
+                $scope.data.message = '';
             };
             
             $scope.showMessagePopup = function () {
@@ -110,7 +76,7 @@
             $scope.showNickPopup = function () {
                 var myPopup = $ionicPopup.show({
                     template: '<input ng-model="data.nick">',
-                    title: 'Your nick',
+                    title: 'Me',
                     scope: $scope,
                     buttons: [
                         { text: 'Cancel' },
@@ -124,7 +90,7 @@
                                     return $scope.data.nick;
                                 }
                             }
-                        },
+                        }
                     ]
                 });
 

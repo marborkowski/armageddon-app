@@ -32,6 +32,17 @@ angular.module('starter', ['ionic', 'ionic.utils', 'leaflet-directive'])
                 controller: 'AppCtrl'
             })
 
+            .state('app.account', {
+                url: '/account',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'modules/account/account.html',
+                        controller: 'AccountController',
+                        controllerAs: 'account'
+                    }
+                }
+            })
+
             .state('app.welcome', {
                 url: '/wel',
                 views: {
@@ -115,7 +126,7 @@ angular.module('starter', ['ionic', 'ionic.utils', 'leaflet-directive'])
                         }
                     });*/
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/app/wel');
+        $urlRouterProvider.otherwise('/app/chat');
     })
 
     .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {

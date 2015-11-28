@@ -6,27 +6,11 @@
                 <p>{{item.message}}</p>
             </ion-item>
         </ion-list>
-
-        <div class="list">
-
-            <div class="item item-input-inset">
-                <label class="item-input-wrapper">
-                    <input type="text" placeholder="Message" ng-model="data.message">
-                </label>
-                <button class="button button-small" ng-click="sendMessage()">
-                    Send
-                </button>
-            </div>
-
-        </div>
-
-        <div class="button-bar">
-            <button class="button button-balanced" ng-click="showMessagePopup()">
-                Send message
-            </button>
-            <button class="button button-dark" ng-click="showNickPopup()">
-                Set nick
-            </button>
-        </div>
     </ion-content>
+    <ion-footer-bar class="bar-dark">
+        <input style="width: 100%" type="text" placeholder="Message" ng-model="data.message">
+        <button class="button button-small" ng-click="sendMessage()">
+                Send
+        </button>
+    </ion-footer-bar>
 </ion-view>
