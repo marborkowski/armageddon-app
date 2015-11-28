@@ -18,10 +18,12 @@ angular.module('starter')
 
             var markers = $localStorage.getObject('markers') || [];
 
-            deferred.resolve(markers.map(function(marker) {
+            markers = markers.length ? markers.map(function(marker) {
                 marker.message = marker.type;
                 return marker;
-            }));
+            }) : markers;
+
+            deferred.resolve(markers);
 
             return deferred.promise;
         };
