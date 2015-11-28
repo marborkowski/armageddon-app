@@ -52,6 +52,17 @@ angular.module('starter', ['ionic'])
                         controllerAs: 'settings'
                     }
                 }
+            })
+            
+            .state('app.chat', {
+                url: '/chat',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'modules/chat/chat.html',
+                        controller: 'ChatController',
+                        controllerAs: 'chat'
+                    }
+                }
             });
 
 /*            .state('app.search', {
