@@ -18,6 +18,9 @@
                 }
             };
 
+            vm.tiles = {
+                url: 'http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png'
+            };
 
             var currentMarker = {};
 
