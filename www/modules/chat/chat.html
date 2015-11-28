@@ -1,0 +1,19 @@
+<ion-view view-title="Chat">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="item in chatMessages">
+                <h2>{{item.nick}}</h2>
+                <p>{{item.message}}</p>
+            </ion-item>
+        </ion-list>
+
+        <div class="button-bar">
+            <button class="button button-balanced" ng-click="showMessagePopup()">
+                Send message
+            </button>
+            <button class="button button-dark" ng-click="showNickPopup()">
+                Set nick
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,4 +1,12 @@
 {
   "name": "armageddon-app",
-  "app_id": "8fb055f3"
+  "app_id": "",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }

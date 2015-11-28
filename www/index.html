@@ -5,12 +5,10 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>App'oCalypse</title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <!--<link href="css/style.css" rel="stylesheet">-->
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    -->
+    <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="lib/leaflet/dist/leaflet.css" rel="stylesheet">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- ionic/angularjs js -->
@@ -21,9 +19,18 @@
 
     <!-- your app's js -->
     <script src="modules/app.js"></script>
+    <script src="modules/global/ionic.utils.js"></script>
     <script src="modules/welcome/welcome.module.js"></script>
     <script src="modules/bluetooth/discoverer.module.js"></script>
     <script src="modules/bluetooth/bluetooth.service.js"></script>
+    <script src="modules/settings/settings.module.js"></script>
+    <script src="modules/chat/chat.module.js"></script>
+    <script src="modules/map/map.module.js"></script>
+    <script src="modules/map/map.service.js"></script>
+
+    <!-- leafet js -->
+    <script src="lib/leaflet/dist/leaflet.js"></script>
+    <script src="lib/angular-leaflet-directive/dist/angular-leaflet-directive.min.js"></script>
     <!--<script src="../js/controllers.js"></script>-->
   </head>
 
